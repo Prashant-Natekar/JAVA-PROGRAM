@@ -1,0 +1,57 @@
+import java.util.Scanner;
+public class Student2 {
+
+    public static void main(String[] args)
+      {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        System.out.print("Enter the number of subjects: ");
+        int numberOfSubjects = scanner.nextInt();
+
+        
+        int[] marks = new int[numberOfSubjects];
+        int totalMarks = 0;
+
+       
+        for (int i = 0; i < numberOfSubjects; i++) {
+            System.out.print("Enter marks for subject " + (i + 1) + ": ");
+            marks[i] = scanner.nextInt();
+            totalMarks += marks[i];
+        }
+
+        
+        double averagePercentage = (double) totalMarks / numberOfSubjects;
+
+    
+        String grade;
+        if (averagePercentage >= 90) {
+            grade = "A+ Pass";
+        } else if (averagePercentage >= 80) {
+            grade = "A Pass";
+        } else if (averagePercentage >= 70) {
+            grade = "B+ Pass";
+        } else if (averagePercentage >= 60) {
+            grade = "B Pass";
+        }else if (averagePercentage >= 50) {
+            grade = "AB Pass";
+        }else if (averagePercentage >= 40) {
+            grade = "C Pass"; 
+        }else {
+        grade = "FAIL";
+        }
+
+        
+        System.out.println("Total Marks: " + totalMarks);
+        System.out.println("Average Percentage: " + averagePercentage + "%");
+        System.out.println("\nGrade: " + grade + "\n\n");
+        System.out.println("\n\nBREAKDOWN THE GRADES"+"\n");
+        System.out.println("90 Above: A+");
+        System.out.println("80 Above: A"+"\n70 above: B+");
+        System.out.println("60 Above: B"+"\n50 Above: AB");
+        System.out.println("40 Above: C"+"\n40 Below: FAIL");
+        
+        scanner.close();
+    }
+}
+
